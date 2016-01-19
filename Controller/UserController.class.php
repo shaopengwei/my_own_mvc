@@ -22,6 +22,6 @@ class UserController{
 	}
 
 	public function doLogin(){
-
+		var_dump($_POST);
 	}
 }

@@ -34,15 +34,15 @@
 	<div class="avtar">
 		<img src="{*$img_path*}/avtar.png" />
 	</div>
-	<form>
-		<input type="text" class="text" value="Username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}" >
+	<form action="{*$app_path*}/user/dologin" method="post">
+		<input type="text" class="text" name="username" value="Username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}" >
 		<div class="key">
-			<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+			<input type="password" name="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+		</div>
+		<div class="signin">
+			<input type="submit" value="Login" >
 		</div>
 	</form>
-	<div class="signin">
-		<input type="submit" value="Login" >
-	</div>
 </div>
  <div class="copy-rights">
 	<p>Copyright &copy; 2015.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="这是我的test">这是我的test</a> - Collect from <a href="http://www.cssmoban.com/" title="这是我的test" target="_blank">这是我的test</a></p>
