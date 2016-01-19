@@ -26,7 +26,8 @@ $objSmarty->assign('css_path', CSS_PATH);
 $objSmarty->assign('js_path', JS_PATH);
 $objSmarty->assign('img_path', IMG_PATH);
 
-//简单路由
+//使用query_string的简单路由: 
+//your.domain.name/index.php(使用rewrite隐藏)/controller/function/variable1/value1...
 $strInfo = $_SERVER['REQUEST_URI'];
 $strPathInfo = str_replace(APP_PATH.'/', '', $strInfo);
 if(strlen($strPathInfo) > 0){
