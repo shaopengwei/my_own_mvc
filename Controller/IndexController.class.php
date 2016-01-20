@@ -4,7 +4,7 @@
  * @author shaopengwei@hotmail.com
  * @since 2016-1-15
  */
-class IndexController{
+class IndexController extends BaseController{
 	private $objSmarty = NULL;
 
 	function __construct($smarty){
@@ -12,6 +12,7 @@ class IndexController{
 	}
 
 	public function index(){
+		$this->test();
 		$this->objSmarty->display('index/index.tpl');
 	}
 

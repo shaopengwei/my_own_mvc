@@ -3,6 +3,7 @@
  * 我的MVC框架入口
  * 在这里进行路由分发，定位到Contrller控制器中
  */
+session_start();
 header("Content-type:text/html;charset=utf-8");
 date_timezone_set("Asia/Shanghai");
 
@@ -12,6 +13,9 @@ define('APP_PATH', str_replace($_SERVER['DOCUMENT_ROOT'], '', WEB_ROOT));
 define('CSS_PATH', APP_PATH.'/View/css');
 define('JS_PATH', APP_PATH.'/View/js');
 define('IMG_PATH', APP_PATH.'/View/images');
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', 'shao');
 
 //新建Smarty类
 require_once "Libs/Smarty/Smarty.class.php";
@@ -25,6 +29,9 @@ $objSmarty->assign('app_path', APP_PATH);
 $objSmarty->assign('css_path', CSS_PATH);
 $objSmarty->assign('js_path', JS_PATH);
 $objSmarty->assign('img_path', IMG_PATH);
+
+//包含Controller基类
+require_once "Controller/BaseController.class.php";
 
 //使用query_string的简单路由: 
 //your.domain.name/index.php(使用rewrite隐藏)/controller/function/variable1/value1...
